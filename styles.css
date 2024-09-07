@@ -1,0 +1,190 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff0f5;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    animation: fadeInDown 2s ease-out;
+}
+
+header p {
+    font-size: 1.2rem;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Balloons Animation */
+.balloons {
+    position: relative;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 120px; /* Increased balloon size */
+    animation: floatUp 10s infinite ease-in-out;
+}
+
+.balloon1 {
+    left: 20%;
+    animation-duration: 9s;
+}
+
+.balloon2 {
+    left: 50%;
+    animation-duration: 10s;
+}
+
+.balloon3 {
+    left: 80%;
+    animation-duration: 11s;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+/* Confetti Animation */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 204, 0, 0.7);
+    border-radius: 50%;
+    animation: fall 10s linear forwards; /* Ensure the animation runs for the full duration */
+    transform: translateY(-100px);
+    opacity: 1; /* Set initial opacity to 1 */
+    will-change: transform;
+}
+
+/* Colorful Confetti Variations */
+.confetti:nth-child(odd) {
+    background-color: rgba(0, 181, 204, 0.7);
+}
+
+.confetti:nth-child(3n) {
+    background-color: rgba(255, 87, 87, 0.7);
+}
+
+.confetti:nth-child(5n) {
+    background-color: rgba(75, 192, 192, 0.7);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0);
+        opacity: 1; /* Start visible */
+    }
+    80% {
+        opacity: 1; /* Stay visible until the last part */
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0; /* Fade out at the end */
+    }
+}
+
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .balloons {
+        height: 200px;
+    }
+
+    .balloon {
+        width: 80px; /* Smaller balloons for mobile */
+    }
+}
+
+/* Flower Animation */
+#flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* Flower Image */
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('images/flower2.png'); /* Replace with your preferred flower image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fallFlower 12s linear infinite;
+    transform: translateY(-100px);
+    opacity: 1;
+    will-change: transform;
+}
+
+@keyframes fallFlower {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #ff69b4; /* Example color, adjust as needed */
+    font-weight: bold;
+}
+
+.card-text {
+    font-style: italic;
+    color: #555;
+}

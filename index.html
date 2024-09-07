@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday! 🎂</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: wheat;">
+
+    <!-- Party Popper Confetti Container -->
+    <div id="confetti-container"></div>
+    <div id="flower-container"></div>
+    <!-- Header Section -->
+    <header class="bg-gradient text-white text-center py-5">
+        <h1 class="display-4">Happy Birthday! Shruti 🎂</h1>
+        <p class="lead">Wishing you a day filled with love, joy, and all your favorite things.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+
+        <div id="birthdayCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                  <div class="card" style="width: 18rem;">
+                    <img src="images/birthday1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Happy Birthday!</h5>
+                      <p class="card-text">"May your day be filled with love and laughter."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                  <div class="card" style="width: 18rem;">
+                    <img src="images/birthday2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Wishes!</h5>
+                      <p class="card-text">"Wishing you a year full of success and happiness."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                  <div class="card" style="width: 18rem;">
+                    <img src="images/birthday3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Enjoy Your Day!</h5>
+                      <p class="card-text">"May all your dreams come true this year!"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#birthdayCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#birthdayCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          
+
+        <!-- Balloons -->
+        <!-- <div class="balloons">
+            <img src="images/balloon.png" alt="Balloon" class="balloon balloon1">
+            <img src="images/balloon.png" alt="Balloon" class="balloon balloon2">
+            <img src="images/balloon.png" alt="Balloon" class="balloon balloon3">
+        </div> -->
+
+        <!-- Personalized Message -->
+        <section class="text-center my-5">
+            <h2 class="mb-4">A Special Message for You</h2>
+            <p class="lead">May your day be as bright and beautiful as you are. Here's to a year filled with happiness, success, and all the love your heart can hold!</p>
+        </section>
+
+        <!-- Send Replies Section -->
+        <section class="text-center">
+            <h2 class="mb-4">Send Your Replies</h2>
+            <form action="https://formsubmit.co/kumaralokunofficial2003@gmail.com" method="POST">
+            <div class="card w-50 mx-auto p-4">
+                <textarea class="form-control mb-3" rows="3" placeholder="Write your birthday replies here..."></textarea>
+                <button class="btn btn-primary">Send Replies</button>
+            </div>
+        </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient text-white text-center py-4">
+        <p>With love, from Alok(Sarfira)</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Party Popper JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const confettiContainer = document.getElementById('confetti-container');
+            
+            // Function to create a single confetti piece
+            function createConfettiPiece() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random fall time
+                confettiContainer.appendChild(confetti);
+                
+                // Remove confetti after animation ends
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+
+            // Generate multiple confetti pieces
+            for (let i = 0; i < 100; i++) {
+                createConfettiPiece();
+            }
+        });
+    </script>
+    <script>
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.style.left = `${Math.random() * 100}vw`;
+            flower.style.animationDuration = `${Math.random() * 3 + 10}s`; // Randomize fall speed
+            flower.style.opacity = `${Math.random() * 0.5 + 0.5}`; // Randomize opacity
+    
+            document.getElementById('flower-container').appendChild(flower);
+    
+            setTimeout(() => {
+                flower.remove();
+            }, 12000); // Match this with the animation duration
+        }
+    
+        for (let i = 0; i < 70; i++) { // Create 20 flowers
+            setTimeout(createFlower, i * 500); // Stagger flower creation
+        }
+    </script>
+
+    
+</body>
+</html>
