@@ -3,164 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Happy Birthday! 🎂</title>
+    <title>🎉 Happy Birthday Shruti! 🎂</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #ff8e6e;
+            --accent: #ffd166;
+            --light: #fff5f5;
+            --dark: #4a4a4a;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf0;
+            color: var(--dark);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 5% 10%, rgba(255, 214, 102, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 95% 5%, rgba(255, 107, 107, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 50% 90%, rgba(255, 142, 110, 0.15) 0%, transparent 20%);
+        }
+        
+        .cursive {
+            font-family: 'Parisienne', cursive;
+        }
+        
+        /* Header Styling */
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50% 50% / 0 0 30% 30%;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='5' fill='rgba(255,255,255,0.15)' /%3E%3C/svg%3E");
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* Card Carousel */
+        .carousel-container {
+            padding: 2rem 0;
+        }
+        
+        .birthday-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            background: white;
+        }
+        
+        .birthday-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .birthday-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .birthday-card .card-title {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev {
+            left: -25px;
+        }
+        
+        .carousel-control-next {
+            right: -25px;
+        }
+        
+        /* Message Section */
+        .message-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 150px;
+            font-family: 'Parisienne', cursive;
+            color: rgba(255, 107, 107, 0.1);
+            line-height: 1;
+        }
+        
+        .message-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .message-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .shayari {
+            font-style: italic;
+            line-height: 1.8;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        /* Form Styling */
+        .reply-section {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            padding: 1rem;
+            border: 2px solid #f8d7da;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0.7;
+            animation: confetti-fall 5s linear infinite;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Floating Elements */
+        .floating-balloons {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            z-index: -1;
+            opacity: 0.7;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100px;
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Particle Effect */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body style="background-color: wheat;">
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating Decorations -->
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff6b6b' d='M50 15a5 5 0 0 1 5 5v40a5 5 0 0 1-10 0V20a5 5 0 0 1 5-5z'/%3E%3Cpath fill='%23ff8e6e' d='M50 15c10 0 15 10 15 20s-5 20-15 20-15-10-15-20 5-20 15-20z'/%3E%3C/svg%3E" class="floating-balloons" alt="Balloons">
+    <img src="images/heart.png" class="floating-hearts" alt="Hearts">
 
-    <!-- Party Popper Confetti Container -->
-    <div id="confetti-container"></div>
-    <div id="flower-container"></div>
     <!-- Header Section -->
-    <header class="bg-gradient text-white text-center py-5">
-        <h1 class="display-4">Happy Birthday Shruti !🤗🎂</h1>
-        <p class="lead">Wishing you a day filled with love, joy, and all your favorite things.</p>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title cursive">Happy Birthday Shruti! <i class="fas fa-birthday-cake"></i></h1>
+            <p class="lead fs-4">"Happy Birthday to the Love of My Life! 🌹 Every day with you feels like a blessing. Today, we celebrate you and the incredible person you are."</p>
+            <div class="mt-4 pulse-animation">
+                <i class="fas fa-gift fa-2x text-white"></i>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="container my-5">
-
-        <div id="birthdayCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                  <div class="card" style="width: 18rem;">
-                    <img src="images/birthday1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Happy Birthday!</h5>
-                      <p class="card-text">"May your day be filled with love and laughter."</p>
+        <!-- Carousel Section -->
+        <section class="carousel-container">
+            <h2 class="text-center mb-4 fw-bold" style="color: var(--primary);">Birthday Wishes <i class="fas fa-heart"></i></h2>
+            <div id="birthdayCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="card birthday-card" style="width: 22rem;">
+                                <img src="images/birthday1.jpg" class="card-img-top" alt="Birthday celebration">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Happy Birthday!</h5>
+                                    <p class="card-text">"To the woman who makes my heart skip a beat every time she smiles. May your day be as beautiful as you are."</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <div class="card" style="width: 18rem;">
-                    <img src="images/birthday2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Best Wishes!</h5>
-                      <p class="card-text">"Wishing you a year full of success and happiness."</p>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card birthday-card" style="width: 22rem;">
+                                <img src="images/birthday2.jpg" class="card-img-top" alt="Birthday celebration">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Best Wishes!</h5>
+                                    <p class="card-text">"You're not just my girlfriend, you're my best friend, my confidant, and my greatest adventure. Happy birthday, my love!"</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <div class="card" style="width: 18rem;">
-                    <img src="images/birthday3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Enjoy Your Day!</h5>
-                      <p class="card-text">"May all your dreams come true this year!"</p>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="card birthday-card" style="width: 22rem;">
+                                <img src="images/birthday3.jpg" class="card-img-top" alt="Birthday celebration">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Enjoy Your Day!</h5>
+                                    <p class="card-text">"On your special day, I wish you all the happiness you bring into my life every single day."</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#birthdayCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#birthdayCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <a class="carousel-control-prev" href="#birthdayCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#birthdayCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-          
-
-        <!-- Balloons -->
-        <!-- <div class="balloons">
-            <img src="images/balloon.png" alt="Balloon" class="balloon balloon1">
-            <img src="images/balloon.png" alt="Balloon" class="balloon balloon2">
-            <img src="images/balloon.png" alt="Balloon" class="balloon balloon3">
-        </div> -->
+        </section>
 
         <!-- Personalized Message -->
-        <section class="text-center my-5">
-            <h2 class="mb-4">A Special Message for You</h2>
-            <p class="lead">May your day be as bright and beautiful as you are. Here's to a year filled with happiness, success, and all the love your heart can hold! <br>Kuchh to ulta sidha harkat karna tha ab tum yaha ho nhi to soche website hi banate hai. Now Shayari time...
-              </p>
-              <i><p>"Tumhare saath khamoosh bhi rahu toh baatein puri ho jaati hai,<br>Tumse aankhen na bhi milaun to baatein ho jaati hai, <br>Tum raho mere saath, bas itna kaafi hai, <br>Tumse milkar har din, ek kahani ban jaati hai"</p></i>
-              <p class="lead">Last me bas yahi kehna hai ki aise hi positive raho, life me aage badho khoob tarraki karo mahadev tumhari saari manokamna pure kare!</p>
+        <section class="message-section">
+            <h2 class="message-title fw-bold">A Special Message for You</h2>
+            <p class="lead fs-5">"From the moment you came into my life, everything changed for the better. Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.
+<br>Today isn't just about celebrating your birth, but celebrating your existence in my life. You've brought colors to my world that I never knew existed, and every day with you feels like a beautiful dream I never want to wake up from.</p>
+            <div class="shayari text-center">
+                <p class="fs-5 mb-0">"Teri muskuraahat ki roshni se mere din jagmagate hain,
+Teri baahon mein aake mere saare gham bhulate hain.
+Tu meri har khushi, meri har duaa hai mere yaar,
+Bas yahi dua hai khuda se, tu hamesha muskurate rahe.</p>
+            </div>
+            <p class="lead fs-5 mt-4">"Thank you for being you - beautifully imperfect and perfectly amazing. May this year bring you closer to all your dreams, and may I be there to celebrate every achievement with you. I love you more than words can express!</p>
         </section>
 
         <!-- Send Replies Section -->
-        <section class="text-center">
-            <h2 class="mb-4">Send Your Replies</h2>
-            <h6>(Please no boring replies itna mehnat kiya hun tum bhi thora karo, take ur time.)</h6>
-            <form action="https://formspree.io/f/xzzpwwed" method="POST">
-            <!-- <div class="card w-50 mx-auto p-4"> -->
-                <input type="text" name="name"  class="form-control mb-3" rows="3" placeholder="Write your birthday replies here...">
-                <button class="btn btn-primary">Send Replies</button>
-            <!-- </div> -->
-        </form>
+        <section class="reply-section">
+            <h2 class="text-center mb-4 fw-bold" style="color: var(--primary);">Send Your Replies <i class="fas fa-reply"></i></h2>
+            <p class="text-center mb-4">(Please no boring replies itna mehnat kiya hun tum bhi thora karo, take ur time.)</p>
+            <form action="https://formspree.io/f/xzzpwwed" method="POST" class="w-75 mx-auto">
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <textarea name="message" class="form-control" rows="4" placeholder="Write your birthday replies here..."></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg"><i class="fas fa-paper-plane me-2"></i>Send Reply</button>
+                </div>
+            </form>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gradient text-white text-center py-4">
-        <p>With love, from Alok</p>
+    <footer class="text-center py-4">
+        <p class="mb-0 fs-5">With love, from Alok <i class="fas fa-heart ms-2"></i></p>
     </footer>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Party Popper JS -->
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Particles.js for background effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const confettiContainer = document.getElementById('confetti-container');
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ff6b6b"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ff8e6e",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    }
+                },
+                "retina_detect": true
+            });
             
-            // Function to create a single confetti piece
-            function createConfettiPiece() {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random fall time
-                confettiContainer.appendChild(confetti);
+            // Create confetti effect
+            function createConfetti() {
+                const colors = ['#ff6b6b', '#ff8e6e', '#ffd166', '#96ceb4', '#ffa1c5'];
+                const container = document.body;
                 
-                // Remove confetti after animation ends
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.width = Math.random() * 10 + 5 + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    confetti.style.animationDelay = Math.random() * 5 + 's';
+                    container.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 8000);
+                }
             }
-
-            // Generate multiple confetti pieces
-            for (let i = 0; i < 100; i++) {
-                createConfettiPiece();
-            }
+            
+            // Initial confetti
+            createConfetti();
+            
+            // Create confetti at intervals
+            setInterval(createConfetti, 8000);
         });
     </script>
-    <script>
-        function createFlower() {
-            const flower = document.createElement('div');
-            flower.classList.add('flower');
-            flower.style.left = `${Math.random() * 100}vw`;
-            flower.style.animationDuration = `${Math.random() * 3 + 10}s`; // Randomize fall speed
-            flower.style.opacity = `${Math.random() * 0.5 + 0.5}`; // Randomize opacity
-    
-            document.getElementById('flower-container').appendChild(flower);
-    
-            setTimeout(() => {
-                flower.remove();
-            }, 12000); // Match this with the animation duration
-        }
-    
-        for (let i = 0; i < 70; i++) { // Create 20 flowers
-            setTimeout(createFlower, i * 500); // Stagger flower creation
-        }
-    </script>
-
-    
 </body>
 </html>
